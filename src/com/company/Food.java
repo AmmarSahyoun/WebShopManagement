@@ -2,13 +2,13 @@ package com.company;
 
 public class Food extends Product {
 
-    public Food(String brand, String title,  double price) {
-        super("Food", brand, title, price);
+    public Food(String brand, String title,  double price, int quantity) {
+        super("Tech", brand, title, price, quantity);
     }
 
     @Override
     public String getInfo() {
-        return "Food contains: "+ getBrand() + ", " + getTitle() + ", "+ getPrice();
+        return "Tech contains: " + getBrand() + ", " + getTitle() + ", " + getPrice()+ ", " + getQuantity();
 
     }
 }
