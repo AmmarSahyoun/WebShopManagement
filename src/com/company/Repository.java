@@ -15,7 +15,8 @@ public abstract class Repository {
 
     public abstract void getInventoryInfo();
 
-    public abstract int getTotal(Product product);
+    public abstract String getTotal();
+
 }
 
 

@@ -8,11 +8,13 @@ public class Program {
         System.out.println("choose from list");
 
         Inventory inventory = new Inventory();
-
-        inventory.addProduct(new Food("Nistle", "Milk", 35.9,6));
-        inventory.addProduct(new Tech("Sony", "TV", 7000,3));
-        inventory.addProduct(new Clothes("Jack & Jones", "Jacket", 1200,8));
-        inventory.addProduct(new Furniture("IKEA", "Sofa", 2100,3));
+        Cart cart = new Cart();
+        inventory.addProduct(new Food("Nistle", "Milk", 35.9, 6));
+        inventory.addProduct(new Tech("Sony", "TV", 7000, 3));
+        inventory.addProduct(new Clothes("Jack & Jones", "Jacket", 1200, 8));
+        inventory.addProduct(new Furniture("IKEA", "Sofa", 2100, 3));
+        cart.addProduct(new Furniture("IKEA", "table", 1000, 2));
+        cart.addProduct(new Food("juice", "apple", 20, 2));
 
  /*     Collections.sort(cart.getProducts(), new SortByPrice());
         cart.getInfo();
@@ -21,15 +23,16 @@ public class Program {
         cart.getInfo(); */
 
         int choice = 0;
-        System.out.println();
-        System.out.println("     ..: Welcome to WebShop Management :..");
-        System.out.println(" 1. view the products");
-        System.out.println(" 2. add new product");
-        System.out.println(" 2. remove a product");
+
 
         System.out.println();
         boolean continueToRun = true;
         while (continueToRun) {
+            System.out.println();
+            System.out.println("     ..: WebShop Management Menu :..");
+            System.out.println(" 1. view the inventory");
+            System.out.println(" 2. view total cart");
+            System.out.println(" 2. remove a product");
             Scanner scn = new Scanner(System.in);
             try {
                 choice = Integer.parseInt(scn.nextLine());
@@ -39,11 +42,11 @@ public class Program {
                 System.out.println("wrong!! ");
             }
             if (choice == 1) {
-                System.out.println(" Category    . Brand  .Title  .Price");
+                System.out.println(" Category   . Brand  .Title  .Price .QTY");
                 inventory.getInventoryInfo();
             }
             if (choice == 2) {
-
+                cart.getTotal();
             }
             if (choice > 3) {
                 System.out.println("Choose a valid number [1-3] ");
@@ -53,7 +56,7 @@ public class Program {
                 continueToRun = false;
 
             }
-
         }
     }
 }
+

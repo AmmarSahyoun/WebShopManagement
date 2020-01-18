@@ -1,15 +1,20 @@
 package com.company;
 
-public class Cart extends Repository{
-
+public class Cart extends Repository {
 
     @Override
-    public int getTotal(Product product) {
-        int totalProducts = 0;
+    public void getInventoryInfo() {
+    }
+
+    @Override
+    public String getTotal() {
+        double totalProducts = 0;
+        double total = 0;
         for (Product product1 : getProducts()) {
-            totalProducts += product1.getPrice();
+            totalProducts += (product1.getPrice() * product1.getQuantity());
+            total += totalProducts;
         }
-        return totalProducts;
+        return "the cart total price: " + total  ;
 
     }
 }
