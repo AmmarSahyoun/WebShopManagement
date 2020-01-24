@@ -1,5 +1,7 @@
 package com.company;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Cart extends Repository {
 
     @Override
@@ -14,7 +16,7 @@ public class Cart extends Repository {
             totalProducts += (product1.getPrice() * product1.getQuantity());
             total += totalProducts;
         }
-        return "the cart total price: " + total  ;
+        return  "the cart total price: " + total  ;
 
     }
 }

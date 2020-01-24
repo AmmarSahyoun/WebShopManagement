@@ -16,14 +16,7 @@ public class Program {
         cart.addProduct(new Furniture("IKEA", "table", 1000, 2));
         cart.addProduct(new Food("juice", "apple", 20, 2));
 
- /*     Collections.sort(cart.getProducts(), new SortByPrice());
-        cart.getInfo();
-
-        Collections.sort(cart.getProducts(), new SortByName());
-        cart.getInfo(); */
-
         int choice = 0;
-
 
         System.out.println();
         boolean continueToRun = true;
@@ -31,8 +24,9 @@ public class Program {
             System.out.println();
             System.out.println("     ..: WebShop Management Menu :..");
             System.out.println(" 1. view the inventory");
-            System.out.println(" 2. view total cart");
-            System.out.println(" 2. remove a product");
+            System.out.println(" 2. view the your Cart");
+            System.out.println(" 3. view total cart");
+            System.out.println(" 4. remove a product");
             Scanner scn = new Scanner(System.in);
             try {
                 choice = Integer.parseInt(scn.nextLine());
@@ -44,14 +38,19 @@ public class Program {
             if (choice == 1) {
                 System.out.println(" Category   . Brand  .Title  .Price .QTY");
                 inventory.getInventoryInfo();
-            }
+                            }
             if (choice == 2) {
-                cart.getTotal();
-            }
-            if (choice > 3) {
-                System.out.println("Choose a valid number [1-3] ");
+                System.out.println(" Category   . Brand  .Title  .Price .QTY");
+                cart.getInventoryInfo();
+
             }
             if (choice == 3) {
+                System.out.println(cart.getTotal());
+            }
+            if (choice > 5) {
+                System.out.println("Choose a valid number [1-3] ");
+            }
+            if (choice == 5) {
                 System.out.println(" Good Bye!..  ");
                 continueToRun = false;
 
