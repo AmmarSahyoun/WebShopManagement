@@ -22,7 +22,7 @@ public class Program {
         boolean continueToRun = true;
         while (continueToRun) {
             System.out.println();
-            System.out.println("     ..: WebShop Management Menu :..");
+            System.out.println("     .: WebShop Management Menu :.");
             System.out.println(" 1. view the inventory");
             System.out.println(" 2. view the your Cart");
             System.out.println(" 3. view total cart");
